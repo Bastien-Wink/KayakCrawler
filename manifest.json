@@ -1,0 +1,21 @@
+{
+    "name": "Kayak Crawler",
+    "version": "1.0",
+    "manifest_version": 2,
+
+    "description": "Kayak Crawler",
+    "permissions": ["activeTab", "storage", "contextMenus"],
+    "browser_action": {
+        "default_title": "",
+        "default_popup": "settings.html"
+    },
+    "content_scripts": [{
+        "matches": ["https://www.kayak.com/flights*", "https://www.kayak.fr/flights*"],
+        "js": [
+            "node_modules/jquery/dist/jquery.min.js",
+            "node_modules/arrive/minified/arrive.min.js",
+            "js/common.js",
+            "js/searchResult.js"
+        ]
+    }]
+}
